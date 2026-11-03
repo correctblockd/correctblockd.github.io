@@ -1,0 +1,50 @@
+body {
+	background: rgb(7, 69, 126);
+}
+
+.inside-div {
+	border: 5px solid rgb(18, 159, 152);
+	border-style: dotted;
+}
+
+.total {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.top {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	align-items: stretch;
+}
+
+.image-container {
+	order: 1;
+	flex: 0 0 45%;
+	max-width: 60%;
+	height: auto;
+	padding: 0;
+}
+
+.image-container img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	/* I used ai for the object fit and position */
+	object-fit: cover;
+	object-position: center;
+}
+
+.clue-container {
+	order: 2;
+	flex: 1 1 45%;
+	height: auto;
+	min-height: 100%;
+}
+
+.content-container {
+	order: 3;
+	width: 100%;
+}
