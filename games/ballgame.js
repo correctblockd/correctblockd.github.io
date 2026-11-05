@@ -9,8 +9,10 @@ let speedX = 5;
 
 let highScore = localStorage.getItem("highScore", 0);
 
+let parentEl = document.getElementById("ball-game");
+
 function setup() {
-  createCanvas(800, 800);
+  createCanvas(800, 800).parent(parentEl);
 }
 
 function draw() {
@@ -69,6 +71,9 @@ function draw() {
     if (mouseIsPressed === true) {
       health = 3;
       speedX = 4;
+    }
+    if(highScore >= 77){
+      text("Congratulations", 350, 470);
     }
   }
 }

@@ -41,8 +41,6 @@ function draw() {
     }
 }
 
-
-
 function leadingPos(xList) {
     let first = 0;
     for(let i = 0; i < xList.length; i++){
