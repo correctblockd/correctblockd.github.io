@@ -72,7 +72,7 @@ function draw() {
       health = 3;
       speedX = 4;
     }
-    if(highScore >= 77){
+    if(highScore >= 90){
       text("Congratulations", 350, 470);
     }
   }
