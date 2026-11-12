@@ -85,8 +85,8 @@ function draw() {
 
     // makes sure that there is only 1 line at a time to make the game harder
 
-    if (lines.length > 4) {
-      lines = lines.slice(4);
+    if (lines.length > 1) {
+      lines = lines.slice(1);
     }
 
     // collision detection for the rectangle, which lives in the goal
@@ -138,10 +138,10 @@ function draw() {
 
     // code for drawing the lines, this used to be needed because I had multiple lines at a time, but now there can only be 2 and this only ever draws one of them. I know that some people will think it is to hard and want more lines so just left this
 
-    for (let l = 0; l < lines.length; l += 4) {
-      line(lines[l], lines[l + 1], lines[l + 2], lines[l + 3]);
-      let p1 = createVector(lines[l], lines[l + 1]);
-      let p2 = createVector(lines[l + 2], lines[l + 3]);
+    for (let l = 0; l < lines.length; l ++) {
+      line(lines[l][0], lines[l][1], lines[l][2], lines[l][3]);
+      let p1 = createVector(lines[l][0], lines[l][1]);
+      let p2 = createVector(lines[l][2], lines[l][3]);
       collideLine(p1, p2);
     }
 
@@ -240,7 +240,7 @@ function mouseReleased() {
   }
   // pushes line to the array
 
-  lines.push(posX, posY, prevX, prevY);
+  lines.push([posX, posY, prevX, prevY]);
   linesDrawn += 1;
 }
 
