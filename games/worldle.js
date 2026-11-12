@@ -1,2 +1,6 @@
 let letters = []
-let 
+let guessedWords = []
+let answers = []
+
+function checkWord(word){
+}
