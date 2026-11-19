@@ -27,8 +27,10 @@ let streak = 0;
 let selectScreen = 1;
 let dotted = 1;
 
+let parentEl = document.getElementById("line-game");
+
 function setup() {
-  createCanvas(800, 800);
+  createCanvas(800, 800).parent(parentEl);
   textSize(15);
   resetGame();
 }
@@ -43,7 +45,7 @@ function draw() {
     text("Choose mode", 350, 350);
     text("Easy mode: w", 350, 390);
     text("Hard mode: d", 350, 410);
-    text("Impossible: a", 350, 450);
+    text("Impossible: a", 350, 430);
 
     if (keyIsDown("w")) {
       gravity = 0.35;
@@ -190,6 +192,9 @@ function draw() {
     text("Streak: 0", 350, 410);
     text("Click to Restart", 350, 450);
     text("r to select level", 350, 370)
+    if(streak > 10 && dotted === 1){
+      text("responsible", 350, 390)
+    }
     streak = 0;
 
 // resets everything and back to level selection screen
